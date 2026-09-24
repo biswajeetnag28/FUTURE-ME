@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Me - Message to Your Future Self</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">✨ Future Me</h1>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <p class="tagline">Write a message to your future self</p>
+        </header>
+
+        <!-- Motivational Quote -->
+        <div class="quote-container" id="quoteContainer">
+            <blockquote class="quote-text" id="quoteText">
+                "The future depends on what you do today."
+            </blockquote>
+            <p class="quote-author" id="quoteAuthor">— Mahatma Gandhi</p>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Form Section -->
+            <section class="form-section">
+                <h2>Create Your Message</h2>
+                <form id="messageForm" class="message-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea
+                            id="message"
+                            placeholder="Write a message to your future self..."
+                            rows="6"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="futureDate">Reveal Date</label>
+                            <input
+                                type="datetime-local"
+                                id="futureDate"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="personal">Personal</option>
+                                <option value="career">Career</option>
+                                <option value="health">Health</option>
+                                <option value="goals">Goals</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Message</button>
+                </form>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section class="dashboard-section">
+                <h2>Your Messages</h2>
+
+                <div class="dashboard-controls">
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="locked">Locked</button>
+                        <button class="filter-btn" data-filter="unlocked">Unlocked</button>
+                    </div>
+                    <button class="btn btn-secondary" id="clearAllBtn">Clear All</button>
+                </div>
+
+                <div id="messagesContainer" class="messages-container">
+                    <p class="empty-state">No messages yet. Create one to get started! 🚀</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal for Viewing Messages -->
+        <div id="messageModal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeModal">&times;</button>
+                <div class="modal-body" id="modalBody">
+                    <!-- Message content will be injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
