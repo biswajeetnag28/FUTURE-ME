@@ -1,0 +1,17 @@
+{
+  "enabledPlugins": {
+    "commit-commands@claude-plugins-official": true
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "The user just submitted a message. Check if their message is exactly '/ship' (ignoring whitespace).\n\nIf it IS '/ship':\n1. Run 'git status' to see changed files\n2. Run 'git diff --stat' for a summary of changes\n3. Run 'git diff' to see actual code changes\n4. Check for untracked files: 'git status --porcelain'\n5. Summarize the session work in 2-3 paragraphs max:\n   - What code files changed and key modifications\n   - New files added\n   - Files deleted or moved\n   - Document/markdown changes if any\n\nIf it is NOT '/ship', simply respond with 'CONTINUE' to let normal processing happen.\n\nWhen responding with the summary, be direct and concise—focus on what changed."
+          }
+        ]
+      }
+    ]
+  }
+}
